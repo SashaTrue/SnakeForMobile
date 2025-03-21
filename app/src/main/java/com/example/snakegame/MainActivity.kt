@@ -18,7 +18,17 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.example.snakegame.ui.theme.SnakeGameTheme
 
+/**
+ * Главная активность приложения "Змейка".
+ * Эта активность является точкой входа в приложение и настраивает пользовательский интерфейс с использованием Jetpack Compose.
+ */
 class MainActivity : ComponentActivity() {
+    /**
+     * Вызывается при первом создании активности.
+     * Инициализирует интерфейс, устанавливая содержимое в [SnakeGameApp], обёрнутое в [SnakeGameTheme] и [Surface].
+     *
+     * @param savedInstanceState Если не null, этот объект содержит ранее сохранённое состояние активности.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -34,11 +44,24 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * Главная функция-компонент, которая настраивает навигацию и интерфейс приложения "Змейка".
+ * Использует [NavHost] для управления навигацией между различными экранами: начальным экраном, экраном настроек, игровым экраном и экраном окончания игры.
+ */
 @Composable
 fun SnakeGameApp() {
     val navController = rememberNavController()
+
+    /**
+     * Текущая сложность игры, хранимая как изменяемое состояние.
+     * Это состояние используется для передачи выбранной сложности в [GameScreen].
+     */
     var currentDifficulty by remember { mutableStateOf(GameDifficulty.NORMAL) } // Состояние сложности
 
+    /**
+     * Настраивает хост навигации для приложения.
+     * Определяет граф навигации с маршрутами к различным экранам, начиная с "start_screen".
+     */
     NavHost(navController = navController, startDestination = "start_screen") {
         composable(
             "start_screen",

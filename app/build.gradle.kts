@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.dokka") version "2.0.0"
 }
 
 android {
@@ -63,4 +64,5 @@ dependencies {
     implementation ("androidx.compose.animation:animation:1.6.0")
     implementation ("androidx.compose.material3:material3:1.2.0")
     implementation ("androidx.navigation:navigation-compose:2.7.0")
+    testImplementation(kotlin("test"))
 }

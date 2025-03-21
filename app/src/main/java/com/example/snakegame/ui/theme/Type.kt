@@ -6,29 +6,17 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Set of Material typography styles to start with
+/**
+ * Набор типографических стилей для приложения "Змейка".
+ * Определяет стили текста, используемые в интерфейсе.
+ */
 val Typography = Typography(
+    // Стиль для основного текста (например, для кнопок, описаний)
     bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        fontFamily = FontFamily.Default, // Используется шрифт по умолчанию
+        fontWeight = FontWeight.Normal,  // Обычный вес шрифта
+        fontSize = 16.sp,                // Размер шрифта 16 sp
+        lineHeight = 24.sp,              // Высота строки 24 sp
+        letterSpacing = 0.5.sp           // Межбуквенное расстояние 0.5 sp
     )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
 )
